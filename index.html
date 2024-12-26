@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendy's Portfolio</title>
+    <link rel="icon" sizes="16x16" href='/images/favicon.png'>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/5fd8661734.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Rendy Fattah</div>
+        <div class="nav-links" id="sidemenu">
+            <a href="#home">Home</a>
+            <a href="#work">Work</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <i class="fas fa-times" onclick="closemenu()"></i>
+        </div>
+        <div class="menu-btn">
+            <i class="fas fa-bars" onclick="openmenu()"></i>
+        </div>
+    </nav>
+
+    <section id="home">
+        <div class="hero">
+            <h1>Hello, I'm <span>Rendy</span> 
+                <br> Welcome to my Portfolio!</h1>
+            <h2>Tech Explorer & Climate Enthusiast</h2>
+            <div class="cta-buttons">
+                <a href="#work" class="primary-btn">View My Work</a>
+                <a href="#contact" class="secondary-btn">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="work">
+        <h2 class="section-title">Featured Work</h2>
+        <div class="work-grid">
+            <div class="work-card">
+                <div class="work-image">
+                    <img src="images/webdev.png" alt="Web Development">
+                </div>
+                <div class="work-content">
+                    <h3>Front-End Development</h3>
+                    <p>Interactive weather data visualization platform</p>
+                    <a href="https://drive.google.com/drive/folders/1RDW3q5CuI72jdfkZFCf7wArUQsm-ui1W?usp=drive_link" 
+                    target="_blank" class="work-link">View Project →</a>
+                </div>
+            </div>
+            <div class="work-card">
+                <div class="work-image">
+                    <img src="images/uiux.png" alt="UI/UX Design">
+                </div>
+                <div class="work-content">
+                    <h3>UI/UX Design</h3>
+                    <p>Meteorological data interface framework</p>
+                    <a href="https://drive.google.com/drive/folders/1bCvYbJGbBmV8oWSgpp5-eQiI2-yHmT6G?usp=drive_link" 
+                    target="_blank" class="work-link">View Project →</a>
+                </div>
+            </div>
+            <div class="work-card">
+                <div class="work-image">
+                    <img src="images/analyst.png" alt="Data Analysis">
+                </div>
+                <div class="work-content">
+                    <h3>Data Analysis</h3>
+                    <p>Weather modification impact assessment</p>
+                    <a href="https://drive.google.com/drive/folders/12xpQcIYN9WBJ3cHqQijUUcaI9K_rxIgL?usp=drive_link" 
+                    target="_blank" class="work-link">View Project →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-container">
+            <div class="about-text">
+                <h2 class="section-title">About Me</h2>
+                <p>A tech enthusiast with a background in Meteorology, passionate about combining climate science with modern technology to create meaningful solutions.</p>
+                <div class="skills">
+                    <div class="skill-category">
+                        <h3>Skills</h3>
+                        <p>Python, R, JavaScript, PHP, CSS</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Experienced</h3>
+                        <p>Climate Analysis, Web Development, Data Visualization, Climate Modelling</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Education</h3>
+                        <p>Bachelor of Science, IPB University</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="images/about.jpg" alt="Profile Photo">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Get in Touch</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Let's Connect</h3>
+                <p>I'm always open to discussing new projects and opportunities. 
+                    <br> You can connect with my social media below or you can just message me via the form. 
+                    <br> Thank you for coming, have a nice day!</p>
+                <div class="contact-details">
+                    <p><i class="fas fa-envelope"></i> rendyfattah132@gmail.com</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/rendy-respati-206556272/"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/rendyfattah"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/rendy.rspati"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <form class="contact-form" name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Name" required>
+                <input type="email" name="Email" placeholder="Email" required>
+                <textarea placeholder="Message" name="Message" rows="6" required></textarea>
+                <button type="submit" class="primary-btn">Send Message</button>
+            </form>
+            <span id="msg"></span>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Rendy Fattah Portfolio Website</p>
+    </footer>
+
+    <script>
+        // Menu
+        var sidemenu = document.getElementById('sidemenu');
+        function openmenu(){
+            sidemenu.style.right = '0';
+        }
+        function closemenu(){
+            sidemenu.style.right = '-500px';
+    }
+        // Mobile menu toggle
+        const menuBtn = document.querySelector('.menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // submit form
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyv_fGiAqkJxXgZ5az-0lNjfDU05ZmBjBLsedXt2T6TokZ_VMbbhUN64UzW61IXTdvT/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+    
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    msg.innerHTML = "Your message has been sent!"
+                    setTimeout(function(){
+                        msg.innerHTML = ""
+                    },10000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+</body>
+</html>
